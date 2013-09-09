@@ -15,8 +15,7 @@ With the DevShortcutsBundle you can easily run this commands faster.
 ### Composer
 
     composer require 0s1r1s/dev-shortcuts-bundle
-    composer --dev update 0s1r1s/dev-shortcuts-bundle
-    
+
 ##Configuration
 Register the bundle:
 
