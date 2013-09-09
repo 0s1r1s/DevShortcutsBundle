@@ -3,7 +3,7 @@
     "type": "symfony-bundle",
     "description": "Bundle for symfony2 console command shortcuts.",
     "keywords": ["shortcuts", "development", "console command"],
-    "homepage": "http://github.com/0s1r1s/DevShortcutsBundle",
+    "homepage": "https://github.com/0s1r1s/DevShortcutsBundle",
     "license": "MIT",
     "authors": [
         {
@@ -18,10 +18,8 @@
     "suggest": {
         "doctrine/doctrine-fixtures-bundle":"dev-master"
     },
-    "require-dev": {
-    },
     "autoload": {
-        "psr-0": { "NewbridgeGreen\\TestBundle": "" }
+        "psr-0": { "Osiris\\Bundle\\DevShortcutsBundle": "" }
     },
     "minimum-stability": "dev",
     "target-dir": "Osiris/Bundle/DevShortcutsBundle"
