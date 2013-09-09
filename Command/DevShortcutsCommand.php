@@ -68,6 +68,7 @@ Look at the documentation to learn more about this.');
     }
 
     protected function runJobByShortcut($shortCut, OutputInterface $output, InputInterface $input = null) {
+        $fixturesPath = $this->getContainer()->getParameter('osiris_dev_shortcuts.path_to_fixtures');
         switch ($shortCut) {
             // reset the database (drop + create schema and load fixtures)
             case 'd':
@@ -97,12 +98,10 @@ Look at the documentation to learn more about this.');
                 break;
             // load ORM data fixtures
             case 'dform':
-                $fixturesPath = $this->getContainer()->getParameter('osiris_dev_shortcuts.path_to_fixtures');
                 $options = array('command' => 'doctrine:fixtures:load', '--fixtures' => $fixturesPath . '/ORM');
                 break;
             // load environment related data fixtures
             case 'dfenv':
-                $fixturesPath = $this->getContainer()->getParameter('path_to_fixtures');
                 $options = array('command' => 'doctrine:fixtures:load', '--fixtures' => $fixturesPath . '/' . $input->getOption('env'), '--append' => true);
                 break;
             // install the assets
