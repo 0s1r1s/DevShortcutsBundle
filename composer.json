@@ -1,0 +1,28 @@
+{
+    "name": "0s1r1s/dev-shortcuts-bundle",
+    "type": "symfony-bundle",
+    "description": "Bundle for symfony2 console command shortcuts.",
+    "keywords": ["shortcuts", "development", "console command"],
+    "homepage": "http://github.com/0s1r1s/DevShortcutsBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Laurin Wandzioch",
+            "email": "laurin@wandzioch.de"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/framework-bundle": "~2.1"
+    },
+    "suggest": {
+        "doctrine/doctrine-fixtures-bundle":"dev-master"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-0": { "NewbridgeGreen\\TestBundle": "" }
+    },
+    "minimum-stability": "dev",
+    "target-dir": "Osiris/Bundle/DevShortcutsBundle"
+}
