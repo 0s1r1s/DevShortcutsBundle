@@ -33,8 +33,10 @@ The full list of Shortcuts you can use:
 Shortcut | Original command | Usage
 ------------ |-------------| -----
 cc | cache:clear | Clear cache 
-ad | assetic:dump | Dump assets 
+ai | assets:install | Install assets
+ad | assetic:dump | Dump assets
 aw | assetic:dump --watch |  Watch assets
+a | Install & dump assets (ai + ad combination)
 dd | doctrine:database:drop --force | Drop database
 dc | doctrine:database:create | Create database
 sd | doctrine:schema:drop --force | Drop database schema

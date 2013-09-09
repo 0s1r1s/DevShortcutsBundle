@@ -29,10 +29,13 @@ class DevShortcutsCommand extends ContainerAwareCommand
 The following <info>job-shortcuts</info> are available:
 <info>cc</info>         Clear cache
            <error>(cache:clear)</error>
+<info>ai</info>         Install assets
+           <error>(assets:install)</error>
 <info>ad</info>         Dump assets
            <error>(assetic:dump)</error>
 <info>aw</info>         Watch assets
            <error>(assetic:dump --watch)</error>
+<info>a</info>          Install & dump assets (ai + ad combination)
 <info>dd</info>         Drop database
            <error>(doctrine:database:drop --force)</error>
 <info>dc</info>         Create database
@@ -71,6 +74,11 @@ Look at the documentation to learn more about this.');
                 $jobShortcuts = array('sd', 'sc', 'dform', 'dfenv');
                 $this->runJobsByShortcut($jobShortcuts, $output, $input);
                 break;
+            // install & dump assets
+            case 'a':
+                $jobShortcuts = array('ai', 'ad');
+                $this->runJobsByShortcut($jobShortcuts, $output, $input);
+                break;
             // drop the database
             case 'dd':
                 $options = array('command' => 'doctrine:database:drop', '--force' => true);
@@ -96,6 +104,10 @@ Look at the documentation to learn more about this.');
             case 'dfenv':
                 $fixturesPath = $this->getContainer()->getParameter('path_to_fixtures');
                 $options = array('command' => 'doctrine:fixtures:load', '--fixtures' => $fixturesPath . '/' . $input->getOption('env'), '--append' => true);
+                break;
+            // install the assets
+            case 'ai':
+                $options = array('command' => 'assets:install');
                 break;
             // dump the assets
             case 'ad':
