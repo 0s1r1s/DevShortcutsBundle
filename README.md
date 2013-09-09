@@ -5,6 +5,50 @@ DevShortcutsBundle is a symfony2 bundle that allows you to run often used consol
 During development you always need to clear caches, reset the database, dump/watch the assets etc.
 With the DevShortcutsBundle you can easily run this commands faster. 
 
+##Basic docs
+* [Installation](#installation)
+* [Configuration](#configuration)
+* [Usage](#usage)
+ 
+
+##Installation
+### Composer
+
+    composer require 0s1r1s/dev-shortcuts-bundle
+    composer --dev update 0s1r1s/dev-shortcuts-bundle
+    
+##Configuration
+Register the bundle:
+
+```php
+<?php
+// app/AppKernel.php
+public function registerBundles()
+{
+    $bundles = array(
+		// ...
+		new Osiris\Bundle\DevShortcutsBundle\OsirisDevShortcutsBundle(),
+	);
+	// ...
+}
+```
+
+Set the path to your data fixtures in your config.yml:
+
+```yaml
+# app/config/config.yml
+osiris_dev_shortcuts:
+    path_to_fixtures: "./src/Path/ToYourBundle/DataFixtures"
+```
+If you don't use DataFixtures just set the path to null:
+```yaml
+# app/config/config.yml
+osiris_dev_shortcuts:
+    path_to_fixtures: ~
+```
+
+
+##Usage
 E.g. the normal command to watch the assets
 ```
 php app/console assetic:dump --watch
