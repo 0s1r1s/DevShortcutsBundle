@@ -31,7 +31,7 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-            ->scalarNode('path_to_fixtures')->end();
+            ->scalarNode('path_to_fixtures')->defaultNull()->end();
 
         // Here you should define the parameters that are allowed to
         // configure your bundle. See the documentation linked above for

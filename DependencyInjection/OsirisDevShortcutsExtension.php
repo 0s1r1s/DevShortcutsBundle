@@ -34,11 +34,11 @@ class OsirisDevShortcutsExtension extends Extension
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
 
-        if (!isset($config['path_to_fixtures'])) {
-            throw new \InvalidArgumentException(
-                'The "path_to_fixtures" option must be set'
-            );
-        }
+//        if (!isset($config['path_to_fixtures'])) {
+//            throw new \InvalidArgumentException(
+//                'The "path_to_fixtures" option must be set'
+//            );
+//        }
 
         $container->setParameter(
             'osiris_dev_shortcuts.path_to_fixtures',

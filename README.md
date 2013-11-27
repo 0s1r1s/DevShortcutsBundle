@@ -9,7 +9,8 @@ With the DevShortcutsBundle you can easily run this commands faster.
 * [Installation](#installation)
 * [Configuration](#configuration)
 * [Usage](#usage)
- 
+* [List of available shortcuts](#shortcut-list)
+
 
 ##Installation
 ### Composer
@@ -32,18 +33,12 @@ public function registerBundles()
 }
 ```
 
-Set the path to your data fixtures in your config.yml:
+If you want to use the "d" shortcut you need to set the path to your data fixtures in your config.yml:
 
 ```yaml
 # app/config/config.yml
 osiris_dev_shortcuts:
     path_to_fixtures: "./src/Path/ToYourBundle/DataFixtures"
-```
-If you don't use DataFixtures just set the path to null:
-```yaml
-# app/config/config.yml
-osiris_dev_shortcuts:
-    path_to_fixtures: ~
 ```
 
 
@@ -71,6 +66,7 @@ alias sf="php /path/to/your/symfony-project/app/console"
 
 For Windows it's different. Plain DOS doesn't have support for aliases. You can use 4dos / 4nt, Cygwin or something similar to setup aliases.
 
+##Shortcut list
 The full list of Shortcuts you can use:
 
 Shortcut | Original command | Usage

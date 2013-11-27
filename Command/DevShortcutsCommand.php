@@ -82,6 +82,10 @@ Look at the documentation to learn more about this.');
         switch ($shortCut) {
             // reset the database (drop + create schema and load fixtures)
             case 'd':
+                if (!$fixturesPath) {
+                    $output->writeln('<info>You need to define <error>osiris_dev_shortcuts.path_to_fixtures</error> in your config.yml to use this command.</info>');
+                    break;
+                }
                 $jobShortcuts = array('sd', 'sc', 'dform', 'dfenv');
                 $this->runJobsByShortcut($jobShortcuts, $output, $input);
                 break;
@@ -116,7 +120,7 @@ Look at the documentation to learn more about this.');
                 break;
             // install the assets
             case 'ai':
-                $options = array('command' => 'assets:install');
+                $options = array('command' => 'assets:install', '--symlink' => true);
                 break;
             // dump the assets
             case 'ad':
